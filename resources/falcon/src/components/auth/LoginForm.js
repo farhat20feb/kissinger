@@ -6,6 +6,8 @@ import { Button, Form, Row, Col, FormGroup, Input, CustomInput, Label } from 're
 import Divider from '../common/Divider';
 import SocialAuthButtons from './SocialAuthButtons';
 import withRedirect from '../../hoc/withRedirect';
+import  { Redirect } from 'react-router-dom'
+
 
 const LoginForm = ({ setRedirect, hasLabel, layout }) => {
   // State
@@ -13,20 +15,44 @@ const LoginForm = ({ setRedirect, hasLabel, layout }) => {
   const [password, setPassword] = useState('');
   const [remember, setRemember] = useState(true);
   const [isDisabled, setIsDisabled] = useState(true);
-
+  const [isRedirect, setisRedirect] = useState('');
+  const [errormsg, seterrormsg] = useState('');
   // Handler
   const handleSubmit = e => {
     e.preventDefault();
-    toast.success(`Logged in as ${email}`);
-    setRedirect(true);
+    axios.post('http://127.0.0.1:8000/api/login', {
+      email    : email,
+      password : password
+    })
+  .then(res => {
+    localStorage.setItem('myToken',res.data.token);
+    //console.log(res.data.token);
+    if(res.data.token){
+     setisRedirect(true)
+    }
+    else{
+      seterrormsg('Invalid Username and Password!');
+    }
+  })
+   // console.log('hiii');
+   // toast.success(`Logged in as ${email}`);
+   
   };
 
   useEffect(() => {
     setIsDisabled(!email || !password);
   }, [email, password]);
 
+  
+  if(isRedirect==true){
+    return (
+      <Redirect to="/notification" />
+    )
+  }
+ 
   return (
     <Form onSubmit={handleSubmit}>
+      <p style={{color: "red"}}>{errormsg} </p>
       <FormGroup>
         {hasLabel && <Label>Email address</Label>}
         <Input
@@ -66,8 +92,7 @@ const LoginForm = ({ setRedirect, hasLabel, layout }) => {
           Log in
         </Button>
       </FormGroup>
-      <Divider className="mt-4">or log in with</Divider>
-      <SocialAuthButtons />
+    
     </Form>
   );
 };

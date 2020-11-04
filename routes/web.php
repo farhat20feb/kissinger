@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('app');
-});
+
+Route::view('/{path?}', 'app');
+Route::view('/account/{path?}', 'app'); 
+Route::view('/user/{path?}', 'app'); 
+Route::view('/notification/{path?}', 'app'); 

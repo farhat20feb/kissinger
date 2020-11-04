@@ -33,6 +33,17 @@ module.exports = "/images/shape-1.png?e7c6d73f68fe6e2e1c2c56de81c39547";
 
 /***/ }),
 
+/***/ "./resources/falcon/src/assets/img/illustrations/web-stor_white-400.png":
+/*!******************************************************************************!*\
+  !*** ./resources/falcon/src/assets/img/illustrations/web-stor_white-400.png ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/web-stor_white-400.png?f50d0f1fcd16678800e21b8bcd21ed47";
+
+/***/ }),
+
 /***/ "./resources/falcon/src/components/auth/LockScreenForm.js":
 /*!****************************************************************!*\
   !*** ./resources/falcon/src/components/auth/LockScreenForm.js ***!
@@ -356,18 +367,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var Login = function Login() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_AuthCardLayout__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    leftSideContent: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Don't have an account?", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-      className: "text-white text-underline",
-      to: "/authentication/card/register"
-    }, "Get started!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-      className: "mb-0 mt-4 mt-md-5 fs--1 font-weight-semi-bold text-300"
-    }, "Read our", ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-      className: "text-underline text-300",
-      to: "#!"
-    }, "terms"), ' ', "and", ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-      className: "text-underline text-300",
-      to: "#!"
-    }, "conditions", ' ')))
+    leftSideContent: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null)
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Account Login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_LoginForm__WEBPACK_IMPORTED_MODULE_2__["default"], {
     layout: "card",
     hasLabel: true
@@ -531,6 +531,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_img_illustrations_shape_1_png__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_assets_img_illustrations_shape_1_png__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var _assets_img_illustrations_half_circle_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../assets/img/illustrations/half-circle.png */ "./resources/falcon/src/assets/img/illustrations/half-circle.png");
 /* harmony import */ var _assets_img_illustrations_half_circle_png__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_assets_img_illustrations_half_circle_png__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _assets_img_illustrations_web_stor_white_400_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../assets/img/illustrations/web-stor_white-400.png */ "./resources/falcon/src/assets/img/illustrations/web-stor_white-400.png");
+/* harmony import */ var _assets_img_illustrations_web_stor_white_400_png__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_assets_img_illustrations_web_stor_white_400_png__WEBPACK_IMPORTED_MODULE_11__);
+
 
 
 
@@ -589,9 +592,14 @@ var AuthCardLayout = function AuthCardLayout(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     className: "text-white mb-4 text-sans-serif font-weight-extra-bold fs-4 d-inline-block",
     to: "/"
-  }, "falcon"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "logo-img",
+    src: _assets_img_illustrations_web_stor_white_400_png__WEBPACK_IMPORTED_MODULE_11___default.a,
+    alt: "",
+    width: "250"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: isDark ? 'text-800' : 'text-100'
-  }, "With the power of Falcon, you can now focus only on functionaries for your digital products, while leaving the UI design on us!"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "The Web-Stor Dashboard is your control center for insights about your Web-Stor application connections, all in one place."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "mt-3 mb-4 mt-md-4 mb-md-5"
   }, leftSideContent)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
     md: 7,

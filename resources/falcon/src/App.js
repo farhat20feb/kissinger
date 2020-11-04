@@ -8,7 +8,7 @@ import 'react-image-lightbox/style.css';
 
 const App = () => {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router basename='/'>
       <Layout />
     </Router>
   );

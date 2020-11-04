@@ -1,6 +1,7 @@
 const insertStylesheet = ({ isRTL, isDark }, cb) => {
   const link = document.createElement('link');
-  link.href = `${process.env.PUBLIC_URL}/css/theme${isDark ? '-dark' : ''}${isRTL ? '-rtl' : ''}.css`;
+ // link.href = `${process.env.PUBLIC_URL}/css/theme${isDark ? '-dark' : ''}${isRTL ? '-rtl' : ''}.css`;
+  link.href = `/assets/theme${isDark ? '-dark' : ''}${isRTL ? '-rtl' : ''}.css`;
   link.type = 'text/css';
   link.rel = 'stylesheet';
   link.className = 'theme-stylesheet';

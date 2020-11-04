@@ -39,7 +39,7 @@ const CardSummary = ({ title, rate, linkText, to, color, children }) => {
         <div className={getContentClassNames(color)}>{children}</div>
         <Link className="font-weight-semi-bold fs--1 text-nowrap" to={to}>
           {linkText}
-          <FontAwesomeIcon icon="angle-right" transform="down-1.5" className="ml-1" />
+      
         </Link>
       </CardBody>
     </Card>

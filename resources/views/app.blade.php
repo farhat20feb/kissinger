@@ -11,6 +11,7 @@
         
         <link rel="manifest" href="/manifest.json" />
         <link rel="stylesheet" href="{{('css/app.css')}}" />
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <!-- Styles -->
         
        

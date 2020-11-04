@@ -24,12 +24,10 @@ import { getPaginationArray } from '../../helpers/utils';
 
 const orderFormatter = (dataField, { id, name, email }, row) => (
   <Fragment>
-    <Link to="/e-commerce/order-details">
-      <strong>#{id}</strong>
-    </Link>{' '}
-    by <strong>{name}</strong>
-    <br />
-    <a href={`mailto:${email}`}>{email}</a>
+    
+     <strong>{name}</strong>
+     
+     
   </Fragment>
 );
 
@@ -63,16 +61,16 @@ const badgeFormatter = status => {
     case 'pending':
       color = 'warning';
       icon = 'stream';
-      text = 'Pending';
+      text = 'Enabled';
       break;
     default:
-      color = 'warning';
-      icon = 'stream';
-      text = 'Pending';
+      color = 'success';
+      icon = 'check';
+      text = 'Enabled';
   }
 
   return (
-    <Badge color={`soft-${color}`} className="rounded-capsule fs--1 d-block">
+    <Badge color={`soft-${color}`} className="rounded-capsule fs--1 d-block"> 
       {text}
       <FontAwesomeIcon icon={icon} transform="shrink-2" className="ml-1" />
     </Badge>
@@ -95,10 +93,9 @@ const actionFormatter = (dataField, { id }, row) => (
       <FontAwesomeIcon icon="ellipsis-h" className="fs--1" />
     </DropdownToggle>
     <DropdownMenu right className="border py-2">
-      <DropdownItem onClick={() => console.log('Completed: ', id)}>Completed</DropdownItem>
-      <DropdownItem onClick={() => console.log('Processing: ', id)}>Processing</DropdownItem>
-      <DropdownItem onClick={() => console.log('On hold: ', id)}>On hold</DropdownItem>
-      <DropdownItem onClick={() => console.log('Pending: ', id)}>Pending</DropdownItem>
+      <DropdownItem onClick={() => console.log('Completed: ', id)}>Disabled</DropdownItem>
+      <DropdownItem onClick={() => console.log('Processing: ', id)}>View</DropdownItem>
+      <DropdownItem onClick={() => console.log('On hold: ', id)}>Edit</DropdownItem>
       <DropdownItem divider />
       <DropdownItem onClick={() => console.log('Delete: ', id)} className="text-danger">
         Delete
@@ -110,22 +107,9 @@ const actionFormatter = (dataField, { id }, row) => (
 const columns = [
   {
     dataField: 'id',
-    text: 'Order',
+    text: 'Name',
     classes: 'py-2 align-middle',
     formatter: orderFormatter,
-    sort: true
-  },
-  {
-    dataField: 'date',
-    text: 'Date',
-    classes: 'py-2 align-middle',
-    sort: true
-  },
-  {
-    dataField: 'address',
-    text: 'Ship to',
-    classes: 'py-2 align-middle',
-    formatter: shippingFormatter,
     sort: true
   },
   {
@@ -134,15 +118,6 @@ const columns = [
     classes: 'py-2 align-middle',
     formatter: badgeFormatter,
     sort: true
-  },
-  {
-    dataField: 'amount',
-    text: 'Amount',
-    classes: 'py-2 align-middle',
-    formatter: amountFormatter,
-    sort: true,
-    align: 'right',
-    headerAlign: 'right'
   },
   {
     dataField: '',
@@ -203,7 +178,7 @@ const Orders = () => {
 
   return (
     <Card className="mb-3">
-      <FalconCardHeader title="Orders" light={false}>
+      <FalconCardHeader title="Manage Accounts" light={false}>
         {isSelected ? (
           <InputGroup size="sm" className="input-group input-group-sm">
             <CustomInput type="select" id="bulk-select">
@@ -219,10 +194,10 @@ const Orders = () => {
         ) : (
           <Fragment>
             <ButtonIcon icon="plus" transform="shrink-3 down-2" color="falcon-default" size="sm">
-              New
+              New Account
             </ButtonIcon>
             <ButtonIcon icon="filter" transform="shrink-3 down-2" color="falcon-default" size="sm" className="mx-2">
-              Filter
+              Change Status
             </ButtonIcon>
             <ButtonIcon icon="external-link-alt" transform="shrink-3 down-2" color="falcon-default" size="sm">
               Export

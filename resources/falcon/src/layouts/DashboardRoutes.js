@@ -85,6 +85,16 @@ import ProductDetails from '../components/e-commerce/ProductDetails';
 import ShoppingCart from '../components/e-commerce/ShoppingCart';
 import FavouriteItems from '../components/e-commerce/FavouriteItems';
 import Orders from '../components/e-commerce/Orders';
+import Accounts from '../components/e-commerce/Accounts';
+import editAccount from '../components/e-commerce/editAccount';
+import editUser from '../components/e-commerce/editUser';
+import Users from '../components/e-commerce/Users';
+import AddUsers from '../components/e-commerce/Adduser';
+import Notification from '../components/e-commerce/Notification';
+import AddNotification from '../components/e-commerce/AddNotification';
+import ConfigueNotification from '../components/e-commerce/ConfigNotification';
+import Auditlog from '../components/e-commerce/Auditlog';
+import AddAccount from '../components/e-commerce/Newaccount';
 import OrderDetails from '../components/e-commerce/OrderDetails';
 import Customers from '../components/e-commerce/Customers';
 import Checkout from '../components/e-commerce/Checkout';
@@ -156,6 +166,16 @@ const DashboardRoutes = () => (
     <Route path="/pages/starter" exact component={Starter} />
     {/*chat*/}
     <Route path="/chat" exact component={Chat} />
+    <Route path="/accounts" exact component={Accounts} />
+    <Route path="/users" exact component={Users} />
+    <Route path="/viewers" exact component={Auditlog} />
+    <Route path="/notification" exact component={Notification} />
+    <Route path="/account/new" exact component={AddAccount} />
+    <Route path="/account/edit" exact component={editAccount} />
+    <Route path="/user/new" exact component={AddUsers} />
+    <Route path="/user/edit" exact component={editUser} />
+    <Route path="/notification/create" exact component={AddNotification} />
+    <Route path="/configureNotification" exact component={ConfigueNotification} />
     {/*kanban*/}
     <Route path="/kanban" exact component={Kanban} />
     {/*E commerce*/}

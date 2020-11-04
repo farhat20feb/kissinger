@@ -17,7 +17,7 @@ const AuthCardRoutes = ({ match: { url } }) => (
     <Route path={`${url}/confirm-mail`} exact component={ConfirmMail} />
     <Route path={`${url}/password-reset`} exact component={PasswordReset} />
     <Route path={`${url}/lock-screen`} exact component={LockScreen} />
-
+  
     {/*Redirect*/}
     <Redirect to="/errors/404" />
   </Switch>

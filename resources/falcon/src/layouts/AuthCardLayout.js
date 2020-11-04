@@ -10,6 +10,7 @@ import AppContext from '../context/Context';
 import bgShape from '../assets/img/illustrations/bg-shape.png';
 import shape1 from '../assets/img/illustrations/shape-1.png';
 import halfCircle from '../assets/img/illustrations/half-circle.png';
+import logoshape from '../assets/img/illustrations/web-stor_white-400.png';
 
 const AuthCardLayout = ({ leftSideContent, children }) => {
   const { isDark } = useContext(AppContext);
@@ -30,11 +31,11 @@ const AuthCardLayout = ({ leftSideContent, children }) => {
                         className="text-white mb-4 text-sans-serif font-weight-extra-bold fs-4 d-inline-block"
                         to="/"
                       >
-                        falcon
+                         <img className="logo-img" src={logoshape} alt="" width="250" />
+                       
                       </Link>
                       <p className={isDark ? 'text-800' : 'text-100'}>
-                        With the power of Falcon, you can now focus only on functionaries for your digital products,
-                        while leaving the UI design on us!
+                      The Web-Stor Dashboard is your control center for insights about your Web-Stor application connections, all in one place.
                       </p>
                     </div>
                   </div>

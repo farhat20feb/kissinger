@@ -89,17 +89,7 @@ const NavbarVertical = ({ navbarStyle }) => {
             <hr className="navbar-vertical-hr my-2" />
           </div>
 
-          <Button
-            tag={'a'}
-            href="https://themes.getbootstrap.com/product/falcon-admin-dashboard-webapp-template-react/"
-            target="_blank"
-            color="primary"
-            size="sm"
-            block
-            className="my-3 btn-purchase"
-          >
-            Purchase
-          </Button>
+          
         </div>
 
         {/* </Scrollbar> */}

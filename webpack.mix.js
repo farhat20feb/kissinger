@@ -34,7 +34,7 @@ mix.webpackConfig({
 });
 
 // used to run app using reactjs
-mix.react('resources/falcon/src/index.jsx', 'public/js/app.js').version();
+mix.react('resources/falcon/src/index.js', 'public/js/app.js').version();
 
 mix.copy('resources/falcon/public/css', 'public/assets');
 

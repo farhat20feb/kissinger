@@ -40,6 +40,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var LoginForm = function LoginForm(_ref) {
   var setRedirect = _ref.setRedirect,
       hasLabel = _ref.hasLabel,
@@ -64,21 +65,53 @@ var LoginForm = function LoginForm(_ref) {
   var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
       _useState8 = _slicedToArray(_useState7, 2),
       isDisabled = _useState8[0],
-      setIsDisabled = _useState8[1]; // Handler
+      setIsDisabled = _useState8[1];
+
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState10 = _slicedToArray(_useState9, 2),
+      isRedirect = _useState10[0],
+      setisRedirect = _useState10[1];
+
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState12 = _slicedToArray(_useState11, 2),
+      errormsg = _useState12[0],
+      seterrormsg = _useState12[1]; // Handler
 
 
   var handleSubmit = function handleSubmit(e) {
     e.preventDefault();
-    react_toastify__WEBPACK_IMPORTED_MODULE_3__["toast"].success("Logged in as ".concat(email));
-    setRedirect(true);
+    axios.post('http://127.0.0.1:8000/api/login', {
+      email: email,
+      password: password
+    }).then(function (res) {
+      localStorage.setItem('myToken', res.data.token); //console.log(res.data.token);
+
+      if (res.data.token) {
+        setisRedirect(true);
+      } else {
+        seterrormsg('Invalid Username and Password!');
+      }
+    }); // console.log('hiii');
+    // toast.success(`Logged in as ${email}`);
   };
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     setIsDisabled(!email || !password);
   }, [email, password]);
+
+  if (isRedirect == true) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
+      to: "/notification"
+    });
+  }
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Form"], {
     onSubmit: handleSubmit
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_4__["FormGroup"], null, hasLabel && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Label"], null, "Email address"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Input"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    style: {
+      color: "red"
+    }
+  }, errormsg, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_4__["FormGroup"], null, hasLabel && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Label"], null, "Email address"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Input"], {
     placeholder: !hasLabel ? 'Email address' : '',
     value: email,
     onChange: function onChange(_ref2) {
@@ -117,9 +150,7 @@ var LoginForm = function LoginForm(_ref) {
     block: true,
     className: "mt-3",
     disabled: isDisabled
-  }, "Log in")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_Divider__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    className: "mt-4"
-  }, "or log in with"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SocialAuthButtons__WEBPACK_IMPORTED_MODULE_6__["default"], null));
+  }, "Log in")));
 };
 
 LoginForm.propTypes = {
